@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rice & Pulses</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+            
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+<style>
+button{
+ padding: 10px 15px;
+ font-size: 12px;
+ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+ font-weight: bold;
+ border-radius: 20px;
+ transition: 0.5s;
+ margin-bottom: 20px;
+ }
+
+button:hover{
+ background-color: rgb(255, 152, 17);
+ color: white;
+ transform: scale(1.1);
+ }
+ 
+.a:hover{
+ border: 2px solid  black;
+} 
+
+.hover-img{
+  background-color: rgb(17, 16, 16);
+  color: #f0e3e3;
+  display: inline-block;
+  margin: 8px;
+  max-height: 400px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  }
+.hover-img * {
+  box-sizing: border-box;
+  transition: all 0.45s ease;
+  }
+
+.hover-img::before,
+.hover-img::after{
+  background-color: black;
+  border-top: 200px solid black;
+  border-bottom: 200px solid rgb(175, 52, 52);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content:  '';
+  transition: all 0.3s ease;
+  z-index:1;
+  opacity: 0;
+  transform:scaleY(2) ;
+  }
+.hover-img img{
+  vertical-align: top;
+  max-width: 100%;
+  backface-visibility: hidden;
+  }
+.hover-img figcaption{
+ position: absolute;
+ top: 0;
+ bottom: 0;
+ left: 0;
+ right: 0;
+ align-items: center;
+ z-index: 1;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ line-height: 1.1em;
+ opacity: 0;
+ z-index: 2;
+ transition-delay: 0.1s;
+ font-size: 24px;
+ font-family: sans-serif;
+ font-weight: 400;
+ letter-spacing: 1px;
+ text-transform: uppercase;
+ }
+
+.hover-img:hover::before
+.hover-img::after{
+ transform: scale(1);
+ opacity: 1;
+ }
+.hover-img:hover > img {
+ opacity: 0.7;
+}
+.hover-img:hover figcaption{
+ opacity: 1;
+ }
+
+
+ .site-footer
+{
+  background-color:#26272b;
+  padding:45px 0 20px;
+  font-size:15px;
+  line-height:24px;
+  color:#737373;
+}
+.site-footer hr
+{
+  border-top-color:#bbb;
+  opacity:0.5
+}
+.site-footer hr.small
+{
+  margin:20px 0
+}
+.site-footer h6
+{
+  color:#fff;
+  font-size:16px;
+  text-transform:uppercase;
+  margin-top:5px;
+  letter-spacing:2px
+}
+.site-footer a
+{
+  color:#737373;
+}
+.site-footer a:hover
+{
+  color:#3366cc;
+  text-decoration:none;
+}
+.footer-links
+{
+  padding-left:0;
+  list-style:none
+}
+.footer-links li
+{
+  display:block
+}
+.footer-links a
+{
+  color:#737373
+}
+.footer-links a:active,.footer-links a:focus,.footer-links a:hover
+{
+  color:#3366cc;
+  text-decoration:none;
+}
+.footer-links.inline li
+{
+  display:inline-block
+}
+
+
+.copyright-text
+{
+  margin:0
+}
+@media (max-width:991px)
+{
+  .site-footer [class^=col-]
+  {
+    margin-bottom:30px
+  }
+}
+@media (max-width:767px)
+{
+  .site-footer
+  {
+    padding-bottom:0
+  }
+  .site-footer .copyright-text,.site-footer .social-icons
+  {
+    text-align:center
+  }
+}
+
+</style>    
+
+<script>
+    function abc(){
+    alert("Your Order has Booked");
+    }
+</script>
+
+</head>
+<body>
+  <section style="background-color: white;">
+    <nav class="navbar"  class="text-white" style="background-color: rgba(220, 128, 35, 0.922); font-size: 13px; font-weight: bold;  height: 30px;">
+    <marquee scrollamount="10" behavior="alternate ">Enjoy Free Delivery For Orders Over Rs 2000 </marquee></nav>
+   <nav class="navbar navbar-expand-lg navbar-light" style="background-color:black;">
+      
+      <img src="Frame 2 (2).png" alt="" width="100px" height="40px" >
+      <a href="" class="navbar-brand"  style="font-weight: bold;  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+      font-size:20px; font-style: italic; color: rgb(247, 244, 244); margin-left: 20px;  "> Star Brand
+         </a>
+           
+
+              
+    <!--logo-->
+    <button class="btn btn-danger navbar-toggler bg-light" type="button"
+    data-toggle="collapse"
+    data-target="#navbarnavdropdown" aria-controls="navbarnavdropdown"
+       aria-expanded="false" aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon"></span>
+      </button>
+
+
+      
+      
+
+
+    <div class="collapse navbar-collapse" id="fazila">
+      <div class="mx-auto"></div>
+      <ul class="navbar-nav">
+      <li class="nav-item ">
+        <a class="nav-link text-white" style="font-weight: bold;" href="index.html" aria-current="page">Home</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link active text-white" style="font-weight: bold;"
+           href="about.html">About us</a>
+         </li>
+         <li class="nav-item dropdown ">
+          <a class="nav-link dropdown-toggle text-white" style="font-weight: bold;" href="" id="navbarDropdown" data-toggle="dropdown" style="margin-top: 20pxs;">Gallery</a>
+          <div class="dropdown-menu" style="background-color: rgb(54, 52, 52);">
+          <a class="dropdown-item text-white" href="wheat.html">Wheet Flour &rice</a>
+          <a class="dropdown-item text-white" href="fruit.html">Fruit vegetables & sauces</a>
+          <a class="dropdown-item text-white" href="rice and pulses.html">spices & pulses</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item text-center text-primary" href="Query.html">Query</a>
+          </div>
+          </li>
+        
+        <li class="nav-item">
+         <a class="nav-link text-white" style="font-weight: bold;" href="contact.html">Contact us</a>
+        </li> 
+      
+        <li class="nav-item">
+          <a class="nav-link text-white" style="font-weight: bold;" href="Query.html">Query</a>
+       </li> 
+    </li>
+    
+    </ul>
+    </div>
+    </div>
+      
+  
+
+</nav>
+
+        </div>
+        <!-- close -->
+      
+
+<div class="container pt-5">
+ <div class="row">
+  <div class="col-md-6 col-6">
+    <figure class="hover-img">
+    <img src="main pulses.jpeg" style="width: 200px; height: 150px;">
+    <figcaption>
+    <h3>Sauces</h3>
+    </figure>
+    </figcaption>
+    </div>
+  
+    <div class="col-md-6 col-6">
+    <figure class="hover-img">
+    <img src="spices-removebg-preview.png" style="width: 200px; height: 150px;">
+    <figcaption>
+    <h3>SPICES</h3>
+    </figure>
+    </figcaption>
+    </div>
+ </div>  
+</div>
+
+  
+<div class="containerfluid my-3"> <h1 class="text-center font-weight-bold" style="font-family:Georgia, 'Times New Roman', Times, serif;">
+  Pulses</h1></div>
+    
+<div class="container my-3">
+  <div class="row">
+ <div class="col-md-3 col-6 my-3">
+  <div class="a">
+  <img src="bengal_gramm-removebg-preview.png" alt="" class="img-fluid" style="width: 210px; height:190px;">
+ <hr>
+  <h6 class="text-center">Daal Mong Washed 1Kg</h6> 
+  <p class="text-center text-muted"><span style="color: red;">Rs:350</span></p>
+  <p class="text-center text-muted"> <span style="color: rgb(16, 199, 16);">In Stock</span></p>   
+  <center><button onclick="abc();"><i class="fa fa-shopping-cart"></i>  Shop Now</button> </center>
+  </div>
+ </div> 
+            
+<div class="col-md-3 col-6 my-3">
+ <div class="a">
+ <img src="brown chickpeas.jpg" alt="" class="img-fluid" style="width: 210px; height:190px;">
+<hr>
+ <h6 class="text-center">Black Chana 1 KG</h6> 
+ <p class="text-center text-muted"><span style="color: red;">Rs: 325</span></p>
+ <p class="text-center text-muted"> <span style="color: rgb(16, 199, 16);">In Stock</span></p>   
+ <center><button onclick="abc();"><i class="fa fa-shopping-cart"></i>  Shop Now</button> </center>
+ </div>
+</div> 
+             
+<div class="col-md-3 col-6 my-3">
+ <div class="a">
+ <img src="white_chana-removebg-preview.png" alt="" class="img-fluid" style="width: 210px; height:190px;">
+<hr>
+ <h6 class="text-center">White Chana Big</h6> 
+ <p class="text-center text-muted"><span style="color: red;">Rs: 499</span></p>
+ <p class="text-center text-muted"> <span style="color: rgb(16, 199, 16);">In Stock</span></p>   
+ <center><button onclick="abc();"><i class="fa fa-shopping-cart"></i>  Shop Now</button> </center>
+ </div>
+</div>  
+             
+<div class="col-md-3 col-6 my-3">
+ <div class="a">
+ <img src="green_gram_1.jpg" alt="" class="img-fluid" style="width: 210px; height:190px;">
+<hr>
+ <h6 class="text-center">Mung bean</h6> 
+ <p class="text-center text-muted"> Rs: 599</p>
+ <p class="text-center text-muted"> <span style="color: red">Out of Stock</span></p>   
+ <center><button onclick="abc();"><i class="fa fa-shopping-cart"></i>  Shop Now</button> </center>
+ </div>
+</div>  
+ </div>   
+</div>
+
+<div class="container my-4">
+ <div class="row">
+<div class="col-md-3 col-6 my-3">
+ <div class="a">
+ <img src="daal mash.jpg" alt="" class="img-fluid" style="width: 210px; height:190px;">
+ <hr>
+ <h6 class="text-center">N&L Daal Mash Washed</h6> 
+ <p class="text-center text-muted"><span style="color: red;">Rs:790</span></p>
+ <p class="text-center text-muted"> <span style="color: rgb(16, 199, 16);">In Stock</span></p>   
+ <center><button onclick="abc();"><i class="fa fa-shopping-cart"></i>  Shop Now</button> </center>
+ </div>
+</div> 
+            
+<div class="col-md-3 col-6 my-3">
+ <div class="a">
+ <img src="daal chana.jpg" alt="" class="img-fluid" style="width: 210px; height:190px;">
+ <hr>
+ <h6 class="text-center">N&L Daal Chana 1KG</h6> 
+ <p class="text-center text-muted"><span style="color: red;">Rs: 425</span></p>
+ <p class="text-center text-muted"> <span style="color: rgb(16, 199, 16);">In Stock</span></p>   
+ <center><button onclick="abc();"><i class="fa fa-shopping-cart"></i>  Shop Now</button> </center>
+ </div>
+</div> 
+             
+<div class="col-md-3 col-6 my-3">
+ <div class="a">
+ <img src="daal masoor.png" alt="" class="img-fluid" style="width: 210px; height:190px;">
+ <hr>
+ <h6 class="text-center">OK Daal Masoor Washed 1KG</h6> 
+ <p class="text-center text-muted"><span style="color: red;">Rs: 315</span></p>
+ <p class="text-center text-muted"> <span style="color: rgb(16, 199, 16);">In Stock</span></p>   
+ <center><button onclick="abc();"><i class="fa fa-shopping-cart"></i>  Shop Now</button> </center>
+ </div>
+</div>  
+             
+<div class="col-md-3 col-6 my-3">
+ <div class="a">
+ <center> <img src="drybeans-removebg-preview.png" alt="" class="img-fluid" style="width: 190px; height:190px;"></center>
+ <hr>
+ <h6 class="text-center">OK Red Lobia Per 500GM</h6> 
+ <p class="text-center text-muted"> <span style="color: red;">Rs: 245</span></p>
+ <p class="text-center text-muted"> <span style="color: rgb(16, 199, 16);">In Stock</span></p>   
+ <center><button onclick="abc();"><i class="fa fa-shopping-cart"></i>  Shop Now</button> </center>
+ </div>
+ </div>  
+ </div>   
+</div>
+   
+<div class="containerfluid my-5"> <h1 class="text-center font-weight-bold" style="font-family:Georgia, 'Times New Roman', Times, serif;">
+ Spices</h1></div>    
+
+<div class="container my-3">
+ <div class="row">
+ <div class="col-md-3 col-6 my-3">
+ <div class="a">
+ <img src="shan bombay biryani masala.jpg" alt="" class="img-fluid" style="width: 190px; height: 180px;">
+ <hr>
+ <h6 class="text-center">shan bombay biryani (masala)</h6> 
+ <p class="text-center text-muted"><span style="color: red;">Rs:95</span></p>
+ <p class="text-center text-muted"> <span style="color: rgb(16, 199, 16);">In Stock</span></p>   
+ <center><button onclick="abc();"><i class="fa fa-shopping-cart"></i>  Shop Now</button> </center>
+ </div>
+</div> 
+            
+             
+<div class="col-md-3 col-6 my-3">
+ <div class="a">
+ <img src="chilli poowderr.png" alt="" class="img-fluid" style="width: 190px; height: 180px;">
+ <hr>
+ <h6 class="text-center">Red Chilli Crushed</h6> 
+ <p class="text-center text-muted"> <span style="color: red;">Rs: 60</span></p>
+ <p class="text-center text-muted"> <span style="color: rgb(16, 199, 16);">In Stock</span></p>   
+ <center><button onclick="abc();"><i class="fa fa-shopping-cart"></i>  Shop Now</button> </center>
+ </div>
+</div>  
+
+<div class="col-md-3 col-6 my-3">
+ <div class="a">
+ <img src="National chatkharaydaar sabzi.jpg" alt="" class="img-fluid" style="width: 190px; height: 180px;">
+ <hr>
+ <h6 class="text-center">National chatkharaydaar (masala)</h6> 
+ <p class="text-center text-muted"><span style="color: red;">Rs:59</span></p>
+ <p class="text-center text-muted"> <span style="color: rgb(16, 199, 16);">In Stock</span></p>   
+ <center><button onclick="abc();"><i class="fa fa-shopping-cart"></i>  Shop Now</button> </center>
+ </div>
+</div> 
+             
+<div class="col-md-3 col-6 my-3">
+ <div class="a">
+ <center><img src="White Cumin Seed.jpg" alt="" class="img-fluid" style="width: 190px; height: 180px;"></center>
+ <hr>
+ <h6 class="text-center">White Cumin Seed</h6> 
+ <p class="text-center text-muted">Rs:240</p>
+ <p class="text-center text-muted"> <span style="color: red">Out of Stock</span></p>   
+ <center><button onclick="abc();"><i class="fa fa-shopping-cart"></i>  Shop Now</button> </center>
+ </div>
+ </div>  
+</div>  
+           
+ <div class="row">
+ <div class="col-md-3 col-6 my-3">
+ <div class="a">
+ <img src="Badyaan_Khatai_Star_Anise-removebg-preview.png" alt="" class="img-fluid my-1" style="width: 190px; height: 180px;">
+ <hr>
+ <h6 class="text-center">Badyaan Khatai Star</h6> 
+ <p class="text-center text-muted"><span style="color: red;">Rs:95</span></p>
+ <p class="text-center text-muted">Made by:<span style="color: orangered;"> StraBrand</span></p>   
+ <center><button onclick="abc();"><i class="fa fa-shopping-cart"></i>  Shop Now</button> </center>
+ </div>
+ </div> 
+            
+             
+<div class="col-md-3 col-6 my-3">
+ <div class="a">
+ <img src="national salt.png" alt="" class="img-fluid" style="width: 190px; height: 180px;">
+ <hr>
+ <h6 class="text-center">Salt</h6> 
+ <p class="text-center text-muted"> <span style="color: red;">Rs: 60</span></p>
+ <p class="text-center text-muted"> <span style="color: rgb(16, 199, 16);">In Stock</span></p>   
+ <center><button onclick="abc();"><i class="fa fa-shopping-cart"></i>  Shop Now</button> </center>
+ </div>
+</div>  
+
+<div class="col-md-3 col-6 my-3">
+ <div class="a">
+ <img src="Cloves.jpg" alt="" class="img-fluid" style="width: 190px; height: 180px;">
+ <hr>
+ <h6 class="text-center">Cloves - لونگ</h6> 
+ <p class="text-center text-muted"><span style="color: red;">Rs:59</span></p>
+ <p class="text-center text-muted"> <span style="color: rgb(16, 199, 16);">In Stock</span></p>   
+ <center><button onclick="abc();"><i class="fa fa-shopping-cart"></i>  Shop Now</button> </center>
+ </div>
+</div> 
+             
+<div class="col-md-3 col-6 my-3">
+ <div class="a">
+ <center><img src="powder.png" alt="" class="img-fluid" style="width: 190px; height: 180px;"></center>
+ <hr>
+ <h6 class="text-center"> Coriender Powder</h6> 
+ <p class="text-center text-muted"> <span style="color: red;">Rs:240 </span></p>
+ <p class="text-center text-muted"> <span style="color:rgb(16, 199, 16)">In Stock</span></p>   
+ <center><a href="detailpage.html"><button ><i class="fa fa-shopping-cart"></i>  Shop Now</button></a> </center>
+ </div>
+ </div>  
+ </div>           
+</div>
+
+<!-- footer -->
+ <!-- Site footer -->
+ <footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-6">
+        <h6>About</h6>
+        <p class="text-justify">StarBrand.com a company of huge export and import of Agricultural products . Its been many year of this company where we started from a short type of business and now where we are known as a big company in this business world.Thank you for believing us.</p>
+      </div>
+
+      <div class="col-xs-6 col-md-3">
+        <h6>Categories</h6>
+        <ul class="footer-links">
+          <li><a href="wheat.html">Rice & wheat</a></li>
+          <li><a href="fruit.html">Fruits & vegetables</a></li>
+          <li><a href="rice and pulses.html">Pulses & sauces</a></li>
+          <li><a href="wheat.html">Flour & wheat</a></li>
+        </ul>
+      </div>
+
+      <div class="col-xs-6 col-md-3">
+        <h6>Quick Links</h6>
+        <ul class="footer-links">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="Query.html">Query</a></li>
+          <li><a href="contact.html">Sitemap</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-sm-6 col-xs-12">
+        <p class="copyright-text">developed laiba, rikza , fazila, bisma 
+     
+        </p>
+      </div>
+
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        
+      </div>
+    </div>
+  </div>
+</footer>
+  <!-- Footer -->
+ 
+
+<!-- End of .container -->
+</section>
+</body>
+</html>
+
+
+
+ 
+                        
+    
+                                    
+  
+                       
+                        
+      
+    
+   
+      
+  
+ 
+  <!--  -->
+
+ 

@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wheat Products</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+            
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+<style>
+     button{
+            padding: 10px 15px;
+            font-size: 12px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: bold;
+            border-radius: 20px;
+            transition: 0.5s;
+            margin-bottom: 20px;
+        }
+         button:hover{
+            background-color: rgb(255, 152, 17);
+            color: white;
+            transform: scale(1.1);
+        }
+.a:hover{
+  border: 2px solid  black;
+
+}  
+
+.abc{
+    padding: 0;
+    margin: 0;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-repeat: no-repeat;
+}
+
+
+.xyz{
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    display: none;
+    background-repeat: no-repeat;
+}
+.abc:hover .xyz{
+    display: block;
+    background-repeat: no-repeat;
+}
+section{
+    display: grid;
+    background-repeat: no-repeat;
+}
+
+.hover-img{
+      background-color: rgb(0, 0, 0);
+      color: #f0e3e3;
+      display: inline-block;
+      margin: 8px;
+      max-height: 400px;
+      overflow: hidden;
+      position: relative;
+      text-align: center;
+      width: 100%;
+    }
+    .hover-img * {
+      box-sizing: border-box;
+      transition: all 0.45s ease;
+    }
+
+    .hover-img::before,
+    .hover-img::after{
+      background-color: rgb(0, 0, 0);
+  
+      border-top: 200px solid black;
+      border-bottom: 200px solid rgb(175, 52, 52);
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      content:  '';
+      transition: all 0.3s ease;
+      z-index:1;
+      opacity: 0;
+      transform:scaleY(2) ;
+
+
+    }
+    .hover-img img{
+      vertical-align: top;
+      max-width: 100%;
+      backface-visibility: hidden;
+    }
+    .hover-img figcaption{
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      align-items: center;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      line-height: 1.1em;
+      opacity: 0;
+      z-index: 2;
+      transition-delay: 0.1s;
+      font-size: 24px;
+      font-family: sans-serif;
+      font-weight: 400;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .hover-img:hover::before
+    .hover-img::after{
+      transform: scale(1);
+      opacity: 1;
+    }
+    .hover-img:hover > img {
+      opacity: 0.7;
+
+    }
+    .hover-img:hover figcaption{
+      opacity: 1;
+    }
+
+     /* footer */
+ .site-footer
+{
+  background-color:#26272b;
+  padding:45px 0 20px;
+  font-size:15px;
+  line-height:24px;
+  color:#737373;
+}
+.site-footer hr
+{
+  border-top-color:#bbb;
+  opacity:0.5
+}
+.site-footer hr.small
+{
+  margin:20px 0
+}
+.site-footer h6
+{
+  color:#fff;
+  font-size:16px;
+  text-transform:uppercase;
+  margin-top:5px;
+  letter-spacing:2px
+}
+.site-footer a
+{
+  color:#737373;
+}
+.site-footer a:hover
+{
+  color:#3366cc;
+  text-decoration:none;
+}
+.footer-links
+{
+  padding-left:0;
+  list-style:none
+}
+.footer-links li
+{
+  display:block
+}
+.footer-links a
+{
+  color:#737373
+}
+.footer-links a:active,.footer-links a:focus,.footer-links a:hover
+{
+  color:#3366cc;
+  text-decoration:none;
+}
+.footer-links.inline li
+{
+  display:inline-block
+}
+
+
+.copyright-text
+{
+  margin:0
+}
+@media (max-width:991px)
+{
+  .site-footer [class^=col-]
+  {
+    margin-bottom:30px
+  }
+}
+@media (max-width:767px)
+{
+  .site-footer
+  {
+    padding-bottom:0
+  }
+  .site-footer .copyright-text,.site-footer .social-icons
+  {
+    text-align:center
+  }
+}
+
+
+
+
+
+
+
+
+</style>
+
+<script>
+    function abc(){
+    alert("Your Order has Booked");
+    }
+</script>
+
+</head>
+<body>
+  <!-- nav -->
+  <section style="background-color: white;">
+    <nav class="navbar"  class="text-white" style="background-color: rgba(220, 128, 35, 0.922); font-size: 13px; font-weight: bold;  height: 30px;">
+    <marquee scrollamount="10" behavior="alternate ">Enjoy Free Delivery For Orders Over Rs 2000 </marquee></nav>
+   <nav class="navbar navbar-expand-lg navbar-light" style="background-color:black;">
+      
+      <img src="Frame 2 (2).png" alt="" width="100px" height="40px"  style="margin-left: 20px;" ><a href="" class="navbar-brand"  style="font-weight: bold;  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+      font-size:20px; font-style: italic; color: rgb(247, 244, 244);   "> Star Brand
+         </a>
+           
+
+              
+    <!--logo-->
+    <button class="btn btn-danger navbar-toggler bg-light" type="button"
+    data-toggle="collapse"
+    data-target="#navbarnavdropdown" aria-controls="navbarnavdropdown"
+       aria-expanded="false" aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon"></span>
+      </button>
+
+
+      
+      
+
+
+    <div class="collapse navbar-collapse" id="fazila">
+      <div class="mx-auto"></div>
+      <ul class="navbar-nav">
+      <li class="nav-item ">
+        <a class="nav-link text-white" style="font-weight: bold;" href="index.html" aria-current="page">Home</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link active text-white" style="font-weight: bold;"
+           href="about.html">About us</a>
+         </li>
+         <li class="nav-item dropdown ">
+          <a class="nav-link dropdown-toggle text-white" style="font-weight: bold;" href="" id="navbarDropdown" data-toggle="dropdown" style="margin-top: 20pxs;">Categories</a>
+          <div class="dropdown-menu" style="background-color: rgb(54, 52, 52);">
+          <a class="dropdown-item text-white" href="wheat.html">Wheet Flour &rice</a>
+          <a class="dropdown-item text-white" href="fruit.html">Fruit vegetables & sauces</a>
+          <a class="dropdown-item text-white" href="rice and pulses.html">spices & pulses</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item text-center text-primary" href="detailpage.html">Gallery</a>
+          </div>
+          </li>
+        
+        <li class="nav-item">
+         <a class="nav-link text-white" style="font-weight: bold;" href="contact.html">Contact us</a>
+        </li> 
+      
+        <li class="nav-item">
+          <a class="nav-link text-white" style="font-weight: bold;" href="Query.html">Query</a>
+       </li> 
+    </li>
+    
+    </ul>
+    </div>
+    </div>
+      
+  </nav>
+</div>
+
+ 
+ 
+ 
+ 
+
+<div class="container-fluid pt-4"><h3 style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: 700; text-align: center;">
+Shop by category
+</h3></div>
+
+ <div class="container my-4">
+  <div class="row">
+  <div class="col-md-3 col-6">
+  <figure class="hover-img">
+  <img src="flour.png" style="width:150px; height: 150px;">
+  <figcaption>
+  <h3>flour</h3>
+  </figure>
+  </figcaption>
+  </div>
+          
+  <div class="col-md-3 col-6">
+  <figure class="hover-img">
+  <img src="black oil.png" style="width:150px; height: 150px;">
+  <figcaption>
+  <h3>organic oil</h3>
+  </figure>
+  </figcaption>
+  </div>
+          
+  <div class="col-md-3 col-6">
+   <figure class="hover-img">
+   <img src="black rice bora.png" style="width:150px; height: 150px;">
+   <figcaption>
+   <h3>Rice</h3>
+   </figure>
+   </figcaption>
+  </div>
+
+  <div class="col-md-3 col-6">
+   <figure class="hover-img">
+   <img src="black sugar.png" style="width:150px; height: 150px;">
+   <figcaption>
+   <h3>sugar</h3>
+   </figure>
+   </figcaption>
+  </div>
+  </div>
+  </div>
+
+
+<hr>
+<div class="container-fluid my-5"> <h1 class="text-center font-weight-bold" style="font-family:Georgia, 'Times New Roman', Times, serif;">
+Flour</h1></div>
+        
+    
+<div class="container my-3">
+ <div class="row">
+ <div class="col-md-3 col-6 my-3">
+ <div class="a">
+<center> <img src="mughal fine atta.jpg" alt="" class="img-fluid" style="width: 200px; height: 170px;"></center>
+ <hr>
+ <h6 class="text-center">Mughal Fine Flour Atta 5KG</h6> 
+ <p class="text-center text-muted"><span style="color: red;">Rs:785</span></p>
+ <p class="text-center text-muted"> <span style="color: rgb(16, 199, 16);">In Stock</span></p>   
+ <center><button onclick="abc();"><i class="fa fa-shopping-cart"></i>  Shop Now</button> </center>
+ </div>
+ </div> 
+            
+<div class="col-md-3 col-6 my-3">
+ <div class="a">
+ <img src="maida.jpg" alt="" class="img-fluid" style="width: 240px; height: 170px;">
+ <hr>
+ <h6 class="text-center">Maida (White Flour) Per KG</h6> 
+ <p class="text-center text-muted"><span style="color: red;">Rs:159</span></p>
+ <p class="text-center text-muted"> <span style="color: rgb(16, 199, 16);">In Stock</span></p>   
+ <center><button onclick="abc();"><i class="fa fa-shopping-cart"></i>  Shop Now</button> </center>
+ </div>
+</div> 
+             
+<div class="col-md-3 col-6 my-3">
+ <div class="a">
+ <img src="flour.png" alt="" class="img-fluid" style="width: 230px; height: 170px;">
+ <hr>
+ <h6 class="text-center">Wheat flour per KG</h6> 
+ <p class="text-center text-muted"> Rs:1,850</p>
+ <p class="text-center text-muted"> <span style="color: red;">Out of Stock</span></p>   
+ <center><button onclick="abc();"><i class="fa fa-shopping-cart"></i>  Shop Now</button> </center>
+ </div>
+</div>  
+             
+<div class="col-md-3 col-6 my-3">
+ <div class="a">
+<center> <img src="Al-khubz flour.jpeg" alt="" class="img-fluid" style="width: 190px;height: 170px;"></center>
+ <hr>
+ <h6 class="text-center">Al-khubz wheat flour</h6> 
+ <p class="text-center text-muted"> <span style="color: red;">Rs:1,500</span></p>
+ <p class="text-center text-muted"> <span style="color: rgb(16, 199, 16);">In Stock</span></p>   
+ <center><button onclick="abc();"><i class="fa fa-shopping-cart"></i>  Shop Now</button> </center>
+ </div>
+ </div>  
+</div>   
+</div>  
+
+<div class="container-fluid my-5"> <h1 class="text-center font-weight-bold" style="font-family:Georgia, 'Times New Roman', Times, serif;">
+Oil & Ghee</h1></div>
+
+<div class="container my-5">
+  <div class="row">
+  <div class="col-md-3 col-6 my-3">
+  <div class="a">
+  <img src="olive oil.jpg" alt="" class="img-fluid" style="width: 220px; height: 170px;">
+  <hr>
+  <h6 class="text-center">Olive oil 500ML</h6> 
+  <p class="text-center text-muted"> <span style="color: red;">Rs:1,590</span> </p>
+  <p class="text-center text-muted"> <span style="color: rgb(16, 199, 16);">In Stock</span></p>   
+  <center><button onclick="abc();"><i class="fa fa-shopping-cart"></i>  Shop Now</button> </center>
+  </div>
+  </div> 
+             
+ <div class="col-md-3 col-6 my-3">
+  <div class="a">
+ <center><img src="CROP DESI.PNG" alt="" class="img-fluid" style="width: 200px; height: 170px;"></center>
+  <hr>
+  <h6 class="text-center">Adam Desi Ghee 2.5 KG</h6> 
+  <p class="text-center text-muted"> <span style="color: red;">Rs:3,822</span></p>
+  <p class="text-center text-muted"> <span style="color: rgb(16, 199, 16);">In Stock</span></p>   
+  <center><button onclick="abc();"><i class="fa fa-shopping-cart"></i>  Shop Now</button> </center>
+  </div>
+ </div> 
+              
+ <div class="col-md-3 col-6 my-3">
+  <div class="a">
+  <img src="dalda cooking oil.jfif" alt="" class="img-fluid" style="width: 200px; height: 170px;">
+  <hr>
+  <h6 class="text-center">Dalda Cooking Oil 1L x5</h6> 
+  <p class="text-center text-muted"><span style="color: red;">Rs:3,299</span></p>
+  <p class="text-center text-muted"> <span style="color: rgb(16, 199, 16);">In Stock</span></p>   
+  <center><button onclick="abc();"><i class="fa fa-shopping-cart"></i>  Shop Now</button> </center>
+  </div>
+ </div>  
+              
+ <div class="col-md-3 col-6 my-3">
+  <div class="a">
+ <center> <img src="habib cooking oil.jpeg" alt="" class="img-fluid" style="width: 190px;height: 170px;"></center>
+  <hr>
+  <h6 class="text-center">Habib Cooking Oil 1L x5</h6> 
+  <p class="text-center text-muted">Rs:3,499</p>
+  <p class="text-center text-muted"> <span style="color: rgb(16, 199, 16);">In Stock</span></p>   
+  <center><button onclick="abc();"><i class="fa fa-shopping-cart"></i>  Shop Now</button> </center>
+  </div>
+  </div>  
+ </div>   
+</div> 
+
+
+<div class="container-fluid my-5"> <h1 class="text-center font-weight-bold" style="font-family:Georgia, 'Times New Roman', Times, serif;">
+Rice</h1></div>
+
+<div class="container my-5">
+  <div class="row">
+  <div class="col-md-3 col-6 my-3">
+  <div class="a">
+  <img src="shahenshah_sella_rice-removebg-preview.png" alt="" class="img-fluid" style="width: 200px;height: 180px;">
+  <hr>
+  <h6 class="text-center">Shahenshah Rice Sella 20kg</h6> 
+  <p class="text-center text-muted"> Rs:6,149</p>
+  <p class="text-center text-muted"> <span style="color: red;">Out of Stock</span></p>   
+  <center><button onclick="abc();"><i class="fa fa-shopping-cart"></i>  Shop Now</button> </center>
+  </div>
+  </div> 
+             
+ <div class="col-md-3 col-6 my-3">
+  <div class="a">
+ <center><img src="kausar basmati rice.jpg" alt="" class="img-fluid" style="width: 200px; height: 180px;"></center> 
+  <hr>
+  <h6 class="text-center">Kausar Basmati Rice 5KG</h6> 
+  <p class="text-center text-muted"> <span style="color: red;">Rs:2,345</span></p>
+  <p class="text-center text-muted"> <span style="color: rgb(16, 199, 16);">In Stock</span></p>   
+  <center><button onclick="abc();"><i class="fa fa-shopping-cart"></i>  Shop Now</button> </center>
+  </div>
+ </div> 
+              
+ <div class="col-md-3 col-6 my-3">
+  <div class="a">
+ <center><img src="falak organic rice.PNG" alt="" class="img-fluid" style="width: 150px; height: 180px;"></center>
+  <hr>
+  <h6 class="text-center">Falak Organic Rice 1.5kg</h6> 
+  <p class="text-center text-muted"> <span style="color: red;">Rs:615</span></p>
+  <p class="text-center text-muted"> <span style="color: rgb(16, 199, 16);">In Stock</span></p>   
+  <center><button onclick="abc();"><i class="fa fa-shopping-cart"></i>  Shop Now</button> </center>
+  </div>
+ </div>  
+              
+ <div class="col-md-3 col-6 my-3">
+  <div class="a">
+ <center> <img src="mughal.jpg" alt="" class="img-fluid" style="width: 190px;height: 180px;"></center>
+  <hr>
+  <h6 class="text-center">Mughal Badshah Rice 5 KG</h6> 
+  <p class="text-center text-muted"> <span style="color: red;">Rs:1,200</span></p>
+  <p class="text-center text-muted"> <span style="color: rgb(16, 199, 16);">In Stock</span></p>   
+  <center><button onclick="abc();"><i class="fa fa-shopping-cart"></i>  Shop Now</button> </center>
+  </div>
+  </div>  
+ </div>   
+</div> 
+
+
+<div class="container-fluid my-5"> <h1 class="text-center font-weight-bold" style="font-family:Georgia, 'Times New Roman', Times, serif;">
+Sugar</h1></div>
+
+<div class="container my-5">
+  <div class="row">
+  <div class="col-md-3 col-6 my-3">
+  <div class="a">
+  <img src="white sugar.jpg" alt="" class="img-fluid" style="width: 200px; height: 180px;">
+  <hr>
+  <h6 class="text-center">Fine Life White Sugar </br>1KG</h6> 
+  <p class="text-center text-muted"><span style="color: red;">Rs:120</span></p>
+  <p class="text-center text-muted"> <span style="color: rgb(16, 199, 16);">In Stock</span></p>   
+  <center><button onclick="abc();"><i class="fa fa-shopping-cart"></i>  Shop Now</button> </center>
+  </div>
+  </div> 
+             
+ <div class="col-md-3 col-6 my-3">
+  <div class="a">
+ <center> <img src="Capture brown sugar.PNG" alt="" class="img-fluid my-1" style="width: 200px; height: 175px;"></center>
+  <hr>
+  <h6 class="text-center">Sugarie Granulated Brown Sugar 500 gms</h6> 
+  <p class="text-center text-muted"><span style="color: red;">Rs:127</span></p>
+  <p class="text-center text-muted"> <span style="color: rgb(16, 199, 16);">In Stock</span></p>   
+  <center><button onclick="abc();"><i class="fa fa-shopping-cart"></i>  Shop Now</button> </center>
+  </div>
+ </div> 
+              
+ <div class="col-md-3 col-6 my-3">
+  <div class="a">
+  <img src="1016871-1.jpg" alt="" class="img-fluid" style="width: 200px; height: 180px;">
+  <hr>
+  <h6 class="text-center">Mother ChoiceIcing Sugar</br> 300GM</h6> 
+  <p class="text-center text-muted"> Rs:125</p>
+  <p class="text-center text-muted"> <span style="color: red">Out of Stock</span></p>   
+  <center><button onclick="abc();"><i class="fa fa-shopping-cart"></i>  Shop Now</button> </center>
+  </div>
+ </div>  
+              
+ <div class="col-md-3 col-6 my-3">
+  <div class="a">
+ <center> <img src="desi gur.jpg" alt="" class="img-fluid" style="width: 200px;height: 180px;"></center>
+  <hr>
+  <h6 class="text-center"> Organic Gurr packet </br>1000 gram</h6> 
+  <p class="text-center text-muted"><span style="color: red;">Rs:249</span></p>
+  <p class="text-center text-muted"> <span style="color: rgb(16, 199, 16);">In Stock</span></p>   
+  <center><button onclick="abc();"><i class="fa fa-shopping-cart"></i>  Shop Now</button> </center>
+  </div>
+  </div>  
+ </div>   
+</div> 
+<hr>
+
+    <!-- <div class="container">
+     <div class="row">
+     <div class="col-md-3 col-6">
+     <div class="a">
+    <img src="cerelac.png" alt="" style="width: 200px;"> 
+     <hr>
+     <h6 class="text-center">Nestle Cerelac Wheat 350GM</h6>   
+     <p class="text-center">Rs.630</p>
+     <p class="text-center text-muted">Made by: <span style="color:palevioletred">Nestle</span></p>    
+     <button onclick="abc();"><i class="fa fa-shopping-cart"></i>  Shop Now</button>
+     </div> 
+     </div> 
+    
+     <div class="col-md-3 col-6">
+     <div class="a">
+     <img src="fauji crop.PNG" alt="" style="width: 180px; height: 200px;"> 
+     <hr>
+     <h6 class="text-center">Fauji Wheat Flakes 250G</h6>   
+     <p class="text-center">Rs.466</p>
+     <p class="text-muted text-center">Made by: <span style="color:rgb(187, 10, 4)">Fauji</span></p>    
+     <button onclick="abc();"><i class="fa fa-shopping-cart"></i>  Shop Now</button>   
+     </div> 
+     </div> 
+     
+     <div class="col-md-3 col-6">
+     <div class="a">
+     <div class="abc">
+     <img src="manu wheat paratha.png" class="img-fluid" style="width:185px;" >
+     <div class="xyz ">
+     <img src="back paratha.jpg" class="img-fluid ml-4" style="width:200px;">
+     </div>
+     </div>
+     <hr>
+     <h6 class="text-center">Menu Wheat Paratha 30 PCS</h6>   
+     <p class="text-center">Rs.1,125</p>
+     <p class="text-muted text-center">Made by: <span style="color:rgb(7, 158, 45)">Menu</span></p>    
+     <button onclick="abc();"><i class="fa fa-shopping-cart"></i>  Shop Now</button>   
+     </div> 
+     </div> 
+     
+     <div class="col-md-3 col-6">
+        <div class="a">
+        <img src="Dawn_Bread_340g-700x700.jpg" alt="" style="width: 180px; height: 200px;"> 
+        <hr>
+        <h6 class="text-center">Dawn Crispy Rusk Large 400g</h6>   
+        <p> class="text-center"Rs.266</p>
+        <p class="text-muted text-center">Made by: <span style="color:rgb(187, 10, 4)">Dawn</span></p>    
+        <button onclick="abc();"><i class="fa fa-shopping-cart"></i>  Shop Now</button>   
+        </div> 
+        </div>  
+     </div>   
+    </div>
+
+    <div class="container my-5">
+        <div class="row">
+        <div class="col-md-3 col-6">
+        <div class="a">
+        <div class="abc">
+        <img src="arbella pasta.jpg_200Wx200H" class="img-fluid" style="width:185px;" >
+        <div class="xyz ">
+        <img src="back arbella pasta.jpg" class="img-fluid ml-4" style="width:200px;">
+       </div>
+        </div>
+        <hr>
+        <h6 class="text-center">Arbella Fusilli Pasta Wheat 400G</h6>   
+        <p class="text-center">Rs.545</p>
+        <p class=" text-muted text-center">Made by: <span style="color:palevioletred"></span></p>    
+        <button onclick="abc();"><i class="fa fa-shopping-cart"></i>  Shop Now</button>   
+        </div> 
+        </div> 
+       
+        <div class="col-md-3 col-6">
+        <div class="a">
+        <img src="Al-khubz flour.jpeg" alt="" style="width: 180px; height: 200px;"> 
+        <hr>
+        <h6 class="text-center">Al-Khubz Wheat Flour 5KG</h6>   
+        <p class="text-center">Rs.865</p>
+        <p class="text-muted text-center">Made by: <span style="color:rgb(187, 10, 4)">Fauji</span></p>    
+        <button onclick="abc();"><i class="fa fa-shopping-cart"></i>  Shop Now</button>   
+        </div> 
+        </div> 
+        
+        <div class="col-md-3 col-6">
+        <div class="a">
+        <div class="abc">
+        <img src="manu wheat paratha.png" class="img-fluid" style="width:185px;" >
+        <div class="xyz ">
+        <img src="back paratha.jpg" class="img-fluid ml-4" style="width:200px;">
+        </div>
+        </div>
+        <hr>
+        <h6 class="text-center">Menu Wheat Paratha 30 PCS</h6>   
+        <p class="text-center">Rs.1,125</p>
+        <p class="text-muted">Made by: <span style="color:rgb(7, 158, 45)">Menu</span></p>    
+        <button onclick="abc();"><i class="fa fa-shopping-cart"></i>  Shop Now</button>   
+        </div> 
+        </div> 
+        
+        <div class="col-md-3 col-6">
+           <div class="a">
+           <img src="Dawn_Bread_340g-700x700.jpg" alt="" style="width: 180px; height: 200px;"> 
+           <hr>
+           <h6 class="text-center">Dawn Crispy Rusk Large 400g</h6>   
+           <p class="text-center">Rs.266</p>
+           <p class="text-muted text-center">Made by: <span style="color:rgb(187, 10, 4)">Dawn</span></p>    
+           <button onclick="abc();"><i class="fa fa-shopping-cart"></i>  Shop Now</button>   
+           </div> 
+           </div>  
+        </div>   
+       </div> -->
+
+       <!-- footer -->
+ <!-- Site footer -->
+ <footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-6">
+        <h6>About</h6>
+        <p class="text-justify">StarBrand.com a company of huge export and import of Agricultural products . Its been many year of this company where we started from a short type of business and now where we are known as a big company in this business world.Thank you for believing us.</p>
+      </div>
+
+      <div class="col-xs-6 col-md-3">
+        <h6>Categories</h6>
+        <ul class="footer-links">
+          <li><a href="wheat.html">Rice & wheat</a></li>
+          <li><a href="fruit.html">Fruits & vegetables</a></li>
+          <li><a href="rice and pulses.html">Pulses & sauces</a></li>
+          <li><a href="wheat.html">Flour & wheat</a></li>
+        </ul>
+      </div>
+      
+      <div class="col-xs-6 col-md-3">
+        <h6>Quick Links</h6>
+        <ul class="footer-links">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="Query.html">Query</a></li>
+          <li><a href="contact.html">Sitemap</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-sm-6 col-xs-12">
+        <p class="copyright-text">developed laiba, rikza , fazila, bisma 
+     
+        </p>
+      </div>
+
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        
+      </div>
+    </div>
+  </div>
+</footer>
+  <!-- Footer -->
+ 
+
+<!-- End of .container -->
+</section>
+</body>
+</html>
+
+
+
+ 
+                        
+    
+                                    
+  
+                       
+                        
+      
+    
+   
+      
+  
+ 
+  <!--  -->
+
+ 
